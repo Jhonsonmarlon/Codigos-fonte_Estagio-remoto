@@ -18,7 +18,13 @@
     }
 
     function verificar() {
-      const numero = document.getElementById("numero").value;
+      const numero = parseInt(document.getElementById("numero").value);
       const resultado = document.getElementById("resultado");
-      resultado.innerText = fibonacci(numero);
+    
+      if (!isNaN(numero) && numero >= 0) {
+        resultado.innerText = fibonacci(numero);
+      } else {
+        resultado.innerText = "Por favor, informe um número válido.";
+      }
     }
+    
